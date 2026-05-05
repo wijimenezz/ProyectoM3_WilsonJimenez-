@@ -1,7 +1,7 @@
 export function renderAbout() {
   const app = document.querySelector("#app");
   app.innerHTML = `<div
-        class="section section-about"
+        class="section section-about active"
         id="section-about"
         data-section="about"
       >

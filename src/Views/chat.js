@@ -1,6 +1,6 @@
 export function renderChat() {
   const app = document.querySelector("#app");
-  app.innerHTML = `<div class="section section-chat" id="section-chat" data-section="chat">
+  app.innerHTML = `<div class="section section-chat active" id="section-chat" data-section="chat">
   <div class="chat-wrap">
     <div class="chat-header">
       <div class="av-ring">
