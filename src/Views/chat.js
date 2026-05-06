@@ -1,3 +1,9 @@
+const state = {
+  messages: [{ role: "character", text: "Pregunta lo que quieras" }],
+  status: "idle",
+  error: null,
+};
+
 export function renderChat() {
   const app = document.querySelector("#app");
   app.innerHTML = `<div class="section section-chat active" id="section-chat" data-section="chat">
@@ -129,26 +135,38 @@ export function renderChat() {
       </div>
     </div>
 
-    <div class="chat-input-bar">
-      <div class="input-inner">
-        <div class="fake-input">Message Rick…</div>
-        <button class="send-btn">
-          <svg
-            width="15"
-            height="15"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <line x1="22" y1="2" x2="11" y2="13" />
-            <polygon points="22 2 15 22 11 13 2 9 22 2" />
-          </svg>
-        </button>
-      </div>
-    </div>
+    <form class="chat-input-bar" id="chatComposer">
+  <div class="input-inner">
+    <input
+      class="real-input"
+      id="chatInput"
+      type="text"
+      placeholder="Message Rick…"
+      aria-label="Escribe tu mensaje"
+      ${state.status === "loading" ? "disabled" : ""}
+    />
+
+    <button
+      class="send-btn"
+      type="submit"
+      ${state.status === "loading" ? "disabled" : ""}
+    >
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="white"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="22" y1="2" x2="11" y2="13" />
+        <polygon points="22 2 15 22 11 13 2 9 22 2" />
+      </svg>
+    </button>
+  </div>
+</form>
   </div>
 </div>`;
 }
