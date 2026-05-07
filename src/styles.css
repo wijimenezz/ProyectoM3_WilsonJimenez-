@@ -1117,6 +1117,51 @@ body::after {
   background: rgba(99, 102, 241, 0.1);
 }
 
+.skeleton {
+  pointer-events: none;
+}
+
+.skeleton-img {
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 25%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.04) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+.skeleton-line {
+  height: 12px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+.skeleton-line.short {
+  width: 60%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--muted);
+  padding: 32px 0;
+  font-size: 14px;
+}
+
 @media (min-width: 400px) {
   .char-grid {
     gap: 14px;
