@@ -5,7 +5,6 @@ export async function fetchJson(url) {
     const err = new Error(`HTTP${response.status}: ${response.statusText}`);
     err.status = response.status;
     throw err;
-
-    return response.json();
   }
+  return response.json();
 }

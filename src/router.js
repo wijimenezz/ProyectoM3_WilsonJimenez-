@@ -15,15 +15,23 @@ const pathToRoute = {
   "/about": "about",
 };
 
-export function router() {
-  const path = window.location.pathname;
+export async function router() {
+  const path = window.location.pathname || "/";
+
   const render = routes[path] || renderNotFound;
-  render();
+
+  try {
+    await render();
+  } catch (err) {
+    console.error("Render error:", err);
+  }
 
   const route = pathToRoute[path] ?? "home";
+
   document
     .querySelectorAll(".nav-btn")
     .forEach((b) => b.classList.remove("active"));
+
   document
     .querySelector(`.nav-btn[data-route="${route}"]`)
     ?.classList.add("active");

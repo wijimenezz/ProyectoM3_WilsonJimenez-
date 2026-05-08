@@ -3,6 +3,4 @@ import { router } from "./router.js";
 
 setupNavigation();
 
-window.addEventListener("popstate", () => {
-  router();
-});
+router();
