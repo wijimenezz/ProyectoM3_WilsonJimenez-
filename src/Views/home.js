@@ -2,7 +2,7 @@ import { getCharactersByIds, searchCharacters } from "../services/api.js";
 import { setCharacter } from "../services/state.js";
 import { navigateTo } from "../navigation.js";
 
-const DEFAULT_IDS = [1, 2, 3, 4];
+const DEFAULT_IDS = [118, 2, 11, 4];
 
 // ── Entry point ──────────────────────────────────────────
 export async function renderHome() {

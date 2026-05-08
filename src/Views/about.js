@@ -1,5 +1,30 @@
+import { characterInfo } from "../data/characterInfo.js";
+import { getCharacter } from "../services/state.js";
+
 export function renderAbout() {
   const app = document.querySelector("#app");
+
+  const character = getCharacter();
+  if (!character) {
+    app.innerHTML = `<h1>No character selected</h1>`;
+    return;
+  }
+  console.log("nombre", character.name);
+  console.log("información", character);
+
+  const extraInfo = characterInfo[character.id] || {
+    bio: "Información no disponible.",
+    personality: "Desconocida",
+    clueLevel: "Desconocido",
+    starters: [],
+  };
+
+  const totalEpisode = 51;
+  const characterEpisodes = character.episode.length;
+  const percentageEpisode = Math.round(
+    (characterEpisodes / totalEpisode) * 100,
+  );
+
   app.innerHTML = `<div
         class="section section-about active"
         id="section-about"
@@ -16,15 +41,15 @@ export function renderAbout() {
 
         <div class="hero-card">
           <img
-            src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-            alt="Rick Sanchez"
+            src="${character.image}"
+            alt="${character.name}"
           />
           <div class="hero-overlay"></div>
           <div class="hero-content">
-            <div class="hero-name">Rick Sanchez</div>
+            <div class="hero-name">${character.name}</div>
             <div class="hero-sub">
-              <div class="hero-dot s-alive"></div>
-              Alive &nbsp;·&nbsp; Human &nbsp;·&nbsp; Male
+              <div class="hero-dot s-${character.status.toLowerCase()}"></div>
+              ${character.status} &nbsp;·&nbsp; ${character.species} &nbsp;·&nbsp; ${character.gender}
             </div>
           </div>
         </div>
@@ -32,19 +57,27 @@ export function renderAbout() {
         <div class="stats-grid">
           <div class="stat-card glass accent">
             <div class="stat-label">Species</div>
-            <div class="stat-val">Human</div>
+            <div class="stat-val">${character.species}</div>
           </div>
           <div class="stat-card glass">
             <div class="stat-label">Gender</div>
-            <div class="stat-val">Male</div>
+            <div class="stat-val">${character.gender}</div>
+          </div>
+           <div class="stat-card glass">
+            <div class="stat-label">Personality</div>
+            <div class="stat-val">${extraInfo.personality}</div>
+          </div>
+           <div class="stat-card glass">
+            <div class="stat-label">Clue Level</div>
+            <div class="stat-val">${extraInfo.clueLevel}</div>
           </div>
           <div class="stat-card glass accent">
             <div class="stat-label">Origin</div>
-            <div class="stat-val">Earth (C-137)</div>
+            <div class="stat-val">${character.origin.name}</div>
           </div>
           <div class="stat-card glass">
             <div class="stat-label">Location</div>
-            <div class="stat-val">Citadel of Ricks</div>
+            <div class="stat-val">${character.location.name}</div>
           </div>
         </div>
 
@@ -52,14 +85,14 @@ export function renderAbout() {
           <div class="ep-row">
             <div>
               <div class="stat-label">Episodes</div>
-              <div class="ep-num">51</div>
+              <div class="ep-num">${characterEpisodes}</div>
             </div>
             <div class="ep-meta">
-              <div>100% of S1–S5</div>
+              <div>${percentageEpisode}% of S1–S5</div>
               <div
                 style="font-size: 11px; color: var(--faint); margin-top: 2px"
               >
-                51 total episodes
+                ${characterEpisodes} total episodes
               </div>
             </div>
           </div>
@@ -90,13 +123,7 @@ export function renderAbout() {
         <div class="bio-card glass">
           <div class="stat-label" style="margin-bottom: 8px">Quick bio</div>
           <p>
-            <strong>Rick Sanchez</strong> is a <strong>human</strong> scientist
-            from <strong>Earth C-137</strong>, currently residing at the
-            <strong>Citadel of Ricks</strong>. He's appeared in
-            <span class="acc">51 episodes</span> across the multiverse — the
-            most-seen character in the series. Widely considered the smartest
-            being in the universe, his genius is matched only by his nihilism
-            and inexplicable love for Szechuan sauce.
+            ${extraInfo.bio}
           </p>
         </div>
 
@@ -104,13 +131,11 @@ export function renderAbout() {
           <div class="stat-label">Conversation starters</div>
           <!-- FIX: were <label for="tab-chat">, now <button data-route="chat"> -->
           <div class="convo-chips">
-            <button class="chip" data-route="chat">Where are you from?</button>
-            <button class="chip" data-route="chat">What's your story?</button>
-            <button class="chip" data-route="chat">
-              Tell me about the portal gun
-            </button>
-            <button class="chip" data-route="chat">Do you miss Beth?</button>
-            <button class="chip" data-route="chat">Favourite dimension?</button>
+            <button class="chip" data-route="chat">${extraInfo.starters[0]}</button>
+            <button class="chip" data-route="chat">${extraInfo.starters[1]}</button>
+            <button class="chip" data-route="chat">${extraInfo.starters[2]} </button>
+            <button class="chip" data-route="chat">${extraInfo.starters[3]}</button>
+            <button class="chip" data-route="chat">${extraInfo.starters[4]}</button>
           </div>
         </div>
 </div>`;
