@@ -3,6 +3,8 @@ import { router } from "./router.js";
 export function navigateTo(path) {
   const fullPath = path === "home" ? "/" : `/${path}`;
 
+  if (window.location.pathname === fullPath) return;
+
   history.pushState({}, "", fullPath);
 
   router();

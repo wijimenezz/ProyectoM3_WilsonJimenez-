@@ -546,7 +546,7 @@ body::after {
    CHAT
 ══════════════════════════════════════════ */
 .section-chat {
-  padding: 0 !important;
+  padding-bottom: 80px !important;
   height: 100dvh;
   overflow: hidden;
 }
@@ -649,6 +649,8 @@ body::after {
 }
 
 .chat-hd-badge {
+  display: flex;
+  align-items: center;
   font-size: 11px;
   color: var(--muted);
   background: rgba(255, 255, 255, 0.06);
@@ -656,6 +658,11 @@ body::after {
   padding: 4px 10px;
   border-radius: 20px;
   white-space: nowrap;
+  gap: 0.25rem;
+}
+.chat-hd-badge .hero-dot {
+  width: 6px;
+  height: 6px;
 }
 
 .chat-messages {
@@ -863,8 +870,11 @@ body::after {
   font-size: 14px;
   color: var(--muted);
   padding: 4px 0;
-  pointer-events: none;
-  user-select: none;
+}
+
+.real-input:focus {
+  color: #040d3e;
+  outline: none;
 }
 
 .send-btn {
@@ -979,7 +989,9 @@ body::after {
   font-weight: 600;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .ep-card {
