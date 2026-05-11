@@ -34,6 +34,7 @@ export function setupSearch(onSearch) {
   const input = document.querySelector("#search-input");
 
   let timer;
+  if (!input) return;
 
   input.addEventListener("input", () => {
     clearTimeout(timer);
