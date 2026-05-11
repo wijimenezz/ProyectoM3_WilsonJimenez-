@@ -5,6 +5,8 @@
 // Knows nothing about episodes, bio, or events.
 // ─────────────────────────────────────────────
 
+import { getLocationName, getOriginName } from "../../transform/character.js";
+
 export function renderAboutStats(character, extraInfo) {
   return `
     <div class="stats-grid">
@@ -31,12 +33,12 @@ export function renderAboutStats(character, extraInfo) {
 
       <div class="stat-card glass accent">
         <div class="stat-label">Origin</div>
-        <div class="stat-val">${character.origin.name}</div>
+        <div class="stat-val">${getOriginName(character)}</div>
       </div>
 
       <div class="stat-card glass">
         <div class="stat-label">Location</div>
-        <div class="stat-val">${character.location.name}</div>
+        <div class="stat-val">${getLocationName(character)}</div>
       </div>
 
     </div>
