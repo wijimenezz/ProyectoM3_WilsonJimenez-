@@ -1,0 +1,24 @@
+{
+  "name": "proyecto-m3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wijimenezz/ProyectoM3_WilsonJimenez-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/wijimenezz/ProyectoM3_WilsonJimenez-/issues"
+  },
+  "homepage": "https://github.com/wijimenezz/ProyectoM3_WilsonJimenez-#readme",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1"
+  }
+}
