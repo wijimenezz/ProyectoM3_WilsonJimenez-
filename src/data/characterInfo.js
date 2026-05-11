@@ -1,80 +1,101 @@
 export const characterInfo = {
   2: {
     bio: `
-      Morty Smith es el nieto nervioso pero leal de Rick. Constantemente
-      arrastrado a peligrosas aventuras entre dimensiones, Morty ha visto
-      mucho más caos del que cualquier adolescente debería soportar.
-      Detrás de su personalidad torpe y ansiosa, poco a poco se vuelve
-      más inteligente, independiente y, en ocasiones, sorprendentemente
-      manipulador cuando necesita sobrevivir.
+     Morty estuvo presente cuando ocurrió el accidente temporal, pero está nervioso y confundido.
+    Tiene recuerdos incompletos porque varias líneas
+    temporales colapsaron al mismo tiempo.
     `,
     personality: "Extremely Nervous",
     clueLevel: "Media",
     starters: [
-      "¿Cuál fue la peor dimensión que visitaste?",
-      "¿De verdad confías en Rick?",
-      "¿Alguna vez destruiste una línea temporal?",
-      "¿Por qué siempre pareces tan estresado?",
-      "¿Qué secreto le ocultas a tu familia?",
+      "¿Qué recuerdas del accidente?",
+      "¿Viste quién encendió la máquina?",
+      "¿Rick estaba contigo?",
+      "¿Qué pasó antes de la explosión?",
+      "¿Por qué todos olvidaron partes del día?",
     ],
   },
 
   4: {
     bio: `
-      Beth Smith es una brillante cirujana de caballos y la hija de Rick.
-      Vive dividida entre intentar mantener una vida familiar normal y
-      aceptar la inteligencia caótica que heredó de su padre.
-      Beth suele ocultar sus conflictos emocionales detrás del sarcasmo
-      y una actitud segura, haciendo difícil saber lo que realmente siente.
+     "Beth encontró registros médicos y datos extraños después del accidente temporal. 
+     Cree que alguien manipuló memorias para ocultar la verdad.
     `,
     personality: "Intellectual in Conflict",
     clueLevel: "Low",
     starters: [
-      "¿Crees que te estás convirtiendo en Rick?",
-      "¿Cuál es tu mayor arrepentimiento?",
-      "¿La familia Smith podrá ser normal algún día?",
-      "¿Cómo soportas el caos de Rick?",
-      "¿Qué cambiarías de tu vida?",
+      "¿Qué descubriste en los registros?",
+      "¿Alguien manipuló recuerdos?",
+      "¿Qué síntomas tiene la gente afectada?",
+      "¿Rick te contó toda la verdad?",
+      "¿Qué ocurrió antes del colapso temporal?",
     ],
   },
 
-  11: {
+  285: {
     bio: `
-      Albert Einstein es una de las mentes científicas más brillantes de
-      la historia. A través del multiverso, distintas versiones de Einstein
-      aparecen como pensadores excéntricos obsesionados con la física,
-      el tiempo y los misterios cósmicos.
-      Su inteligencia lo convierte en una pieza clave para resolver casos
-      imposibles, aunque su curiosidad puede volverse peligrosa.
+      Rick Prime apareció después de las primeras fracturas temporales. 
+      Aunque parece conocer demasiado sobre la máquina del tiempo y las líneas alternas, 
+      sus verdaderas intenciones siguen siendo un misterio.
     `,
-    personality: "Visionary Genius",
-    clueLevel: "Very Hight",
+    personality: "Calculating and dangerously intelligent",
+    clueLevel: "Multiversal God Level",
     starters: [
-      "¿El viaje en el tiempo realmente puede existir?",
-      "¿Cuál es la verdadera naturaleza de la realidad?",
-      "¿Los universos paralelos podrían colisionar?",
-      "¿Qué descubrimiento cambió la ciencia para siempre?",
-      "¿La inteligencia es un regalo o una maldición?",
+      "¿Cómo sabes tanto sobre las líneas temporales?",
+      "¿Qué ocurrió realmente el día del accidente?",
+      "¿Estás ayudando o manipulando a todos?",
+      "¿Qué sabes sobre Morty y la máquina?",
+      "¿Se puede reparar el tiempo?",
     ],
   },
 
   118: {
     bio: `
-      Evil Morty es una de las mentes más peligrosas del multiverso.
-      A diferencia de otros Mortys, rechazó el control de los Ricks y
-      construyó silenciosamente su propio camino hacia el poder.
-      Frío, inteligente y extremadamente estratégico, Evil Morty oculta
-      sus verdaderas intenciones detrás de una calma inquietante.
-      Cada movimiento suyo parece calculado varios pasos adelante.
+      Evil Morty parece saber exactamente cómo funciona la máquina del tiempo. 
+      Nadie sabe si quiere ayudar o manipular a todos para cumplir su propio plan.
     `,
-    personality: "Cold-blooded Mastermind",
+    personality: "Cold-blooded, calculating, and manipulative.",
     clueLevel: "Extreme",
     starters: [
-      "¿Por qué odias tanto a los Ricks?",
-      "¿Cuál es tu verdadero plan?",
-      "¿El poder puede corromper a cualquiera?",
-      "¿Crees que la libertad realmente existe?",
-      "¿Qué ocurrió antes de escapar de la Ciudadela?",
+      "¿Tú causaste el accidente?",
+      "¿Por qué ocultas información?",
+      "¿Qué quieres realmente?",
+      "¿Cómo se estabiliza la máquina?",
+      "¿Qué pasó en la línea original?",
+    ],
+  },
+
+  242: {
+    bio: `
+      Mr. Meeseeks fue creado para ayudar a reparar la máquina del tiempo, 
+      pero el proceso tomó demasiado tiempo y comenzó a perder estabilidad mental.
+    `,
+    personality: "Chaotic and desperate",
+    clueLevel: "Variable and unstable",
+    starters: [
+      "¿Qué parte intentaste reparar?",
+      "¿Por qué estás tan nervioso?",
+      "¿La máquina todavía funciona?",
+      "¿Qué ocurrió durante la reparación?",
+      "¿Quién te dio la orden?",
+    ],
+  },
+
+  1: {
+    bio: `
+      Rick Sánchez es el científico más brillante del multiverso. 
+      Después de detectar anomalías temporales, 
+      sospecha que alguien alteró una línea de tiempo prohibida 
+      usando una versión corrupta de su pistola portal.
+    `,
+    personality: "Sarcastic, impatient, extremely intelligent",
+    clueLevel: "Hight",
+    starters: [
+      "¿Qué salió mal con la máquina del tiempo?",
+      "¿Quién alteró la línea temporal?",
+      "¿Qué significa la energía verde en los portales?",
+      "¿Cuál es la parte más peligrosa de la máquina?",
+      "¿Por qué Evil Morty está involucrado?",
     ],
   },
 };

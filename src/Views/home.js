@@ -14,7 +14,7 @@ import { buildSearchBar, setupSearch } from "../UI/Home/searchbar.js";
 import { buildCharCard, buildSkeletons } from "../UI/Home/charCard.js";
 import { setGridStatus } from "../UI/Home/gridStatus.js";
 
-const DEFAULT_IDS = [118, 2, 11, 4];
+const DEFAULT_IDS = [118, 2, 242, 4, 1, 285];
 
 // ── Entry point ──────────────────────────────────────────
 export async function renderHome() {

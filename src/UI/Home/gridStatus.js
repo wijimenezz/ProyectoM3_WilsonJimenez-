@@ -17,9 +17,9 @@ export function setGridStatus(status, query = "") {
   if (!grid) return;
 
   const states = {
-    loading: buildSkeletons(4),
-    empty: `<p class="no-results">No characters found for "<strong>${query}</strong>"</p>`,
-    error: `<p class="no-results">Something went wrong. Try again.</p>`,
+    loading: buildSkeletons(6),
+    empty: `<p class="no-results">Morty, revisa el teclado… no encontramos a "<strong>${query}</strong>"</p>`,
+    error: `<p class="no-results">Burp… genial, rompiste la realidad otra vez. Vuelve a intentarlo..</p>`,
   };
 
   grid.innerHTML = states[status] ?? "";
