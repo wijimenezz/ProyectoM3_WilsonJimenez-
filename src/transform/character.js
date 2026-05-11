@@ -1,5 +1,5 @@
 export function getOriginName(rawCharacter) {
-  return rawCharacter.origen?.name ?? "unknown";
+  return rawCharacter.origin?.name ?? "unknown";
 }
 
 export function getLocationName(rawCharacter) {
