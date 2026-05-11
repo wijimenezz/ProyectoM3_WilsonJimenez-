@@ -1,5 +1,22 @@
+// Views/chat.js
+// ─────────────────────────────────────────────
+// Orchestrator only. This file's only job is to:
+// 1. Get the character from state
+// 2. Compose the HTML from UI pieces
+// 3. Inject it into #app
+// 4. Restore scroll and focus
+// 5. Wire up the form
+//
+// It does NOT know how headers, messages, or the
+// form work internally — that's each UI file's job.
+// ─────────────────────────────────────────────
+
 import { getCharacter } from "../services/state.js";
-import { getStatus } from "../services/chatState.js";
+import {
+  getStatus,
+  getPendingMessage,
+  clearPendingMessage,
+} from "../services/chatState.js";
 
 import { renderChatHeader } from "../UI/Chat/chatHeader.js";
 import { renderMessages } from "../UI/Chat/chatMessages.js";
@@ -69,4 +86,18 @@ export function renderChat() {
   // so chatForm can trigger a re-render without
   // importing or knowing about the view layer.
   setupChatForm(character, renderChat);
+
+  // Check if a starter chip was clicked on the About page.
+  // If so, inject the text into the input and auto-submit it.
+  // clearPendingMessage() runs first so re-renders don't fire it again.
+  const pending = getPendingMessage();
+  if (pending) {
+    clearPendingMessage();
+    const input = document.querySelector("#chatInput");
+    const form = document.querySelector("#chatComposer");
+    if (input && form) {
+      input.value = pending;
+      form.requestSubmit();
+    }
+  }
 }

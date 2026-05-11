@@ -37,3 +37,17 @@ export function getError() {
 export function setError(newError) {
   error = newError;
 }
+
+let pendingMessage = null;
+
+export function getPendingMessage() {
+  return pendingMessage;
+}
+
+export function setPendingMessage(text) {
+  pendingMessage = text;
+}
+
+export function clearPendingMessage() {
+  pendingMessage = null;
+}

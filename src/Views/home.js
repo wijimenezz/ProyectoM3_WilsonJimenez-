@@ -46,11 +46,15 @@ function buildShell() {
 
       <p class="sec-label">Personajes</p>
       <h1 class="sec-title">Elige Bien a Quien<br/>Preguntar</h1>
+      <div class="trama-card glass">
+      <div class="stat-label" style="margin-bottom: 8px">Trama</div>
+      <p>Una máquina del tiempo explotó en el garaje de Rick y ahora múltiples líneas temporales están colapsando. Cada personaje recuerda algo distinto. Habla con ellos, descubre las contradicciones y encuentra quién provocó el accidente antes de que el multiverso desaparezca.</p>
+    </div>
 
-      ${buildSearchBar()}
+    
 
       <div class="char-grid" id="char-grid">
-        ${buildSkeletons(4)}
+        ${buildSkeletons(6)}
       </div>
 
       <div class="cta-bar">

@@ -9,7 +9,7 @@ export function renderAboutStarters(extraInfo) {
   const chips = extraInfo.starters
     .map(
       (starter) => `
-      <button class="chip" data-route="chat">
+      <button class="chip" data-route="chat" data-message="${starter}">
         ${starter}
       </button>
     `,
@@ -19,9 +19,7 @@ export function renderAboutStarters(extraInfo) {
   return `
     <div class="convo-suggestions">
       <div class="stat-label">Conversation starters</div>
-      <div class="convo-chips">
-        ${chips}
-      </div>
+      <div class="convo-chips">${chips}</div>
     </div>
   `;
 }
