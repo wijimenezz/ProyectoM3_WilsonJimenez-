@@ -1,17 +1,18 @@
+import { characterGreetings } from "../data/greetings.js";
+
 const conversations = {};
-
 let status = "idle";
-
 let error = null;
 
 export function getMessages(characterId) {
   if (!conversations[characterId]) {
-    conversations[characterId] = [
-      {
-        role: "character",
-        text: "Pregunta lo que quieras",
-      },
-    ];
+    const greetings = characterGreetings[characterId];
+
+    const firstMessage = greetings
+      ? greetings[Math.floor(Math.random() * greetings.length)]
+      : "Pregunta lo que quieras";
+
+    conversations[characterId] = [{ role: "character", text: firstMessage }];
   }
 
   return conversations[characterId];
