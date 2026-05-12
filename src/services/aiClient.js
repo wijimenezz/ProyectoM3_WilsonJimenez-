@@ -3,7 +3,7 @@ import {
   getTrimmedHistory,
   normalizeAIResponse,
 } from "../transform/chatPayload.js";
-import { send as sendToMock } from "./mockGeminiApi.js";
+import { send as sendToMock } from "./geminiApi.js";
 import {
   BETH_SYSTEM_PROMT,
   EVIL_MORTY_SYSTEM_PROMT,
