@@ -21,7 +21,11 @@ import {
 import { renderChatHeader } from "../UI/Chat/chatHeader.js";
 import { renderMessages } from "../UI/Chat/chatMessages.js";
 import { renderChatStatus } from "../UI/Chat/chatStatus.js";
-import { setupChatForm } from "../UI/Chat/chatForm.js";
+import {
+  setupChatForm,
+  sendMessage,
+  getLastFailedMessage,
+} from "../UI/Chat/chatForm.js"; // ← added sendMessage + getLastFailedMessage
 import { scrollToBottom } from "../UI/Chat/chatHelpers.js";
 
 export function renderChat() {
@@ -86,6 +90,17 @@ export function renderChat() {
   // so chatForm can trigger a re-render without
   // importing or knowing about the view layer.
   setupChatForm(character, renderChat);
+
+  // ← NEW: wire up the retry button if it's in the DOM.
+  // It only exists when status === "error", so the querySelector
+  // returns null on normal renders and the block is skipped.
+  const retryBtn = document.querySelector("[data-action='retry']");
+  if (retryBtn) {
+    retryBtn.addEventListener("click", () => {
+      const failed = getLastFailedMessage();
+      if (failed) sendMessage(character, failed, renderChat);
+    });
+  }
 
   // Check if a starter chip was clicked on the About page.
   // If so, inject the text into the input and auto-submit it.
