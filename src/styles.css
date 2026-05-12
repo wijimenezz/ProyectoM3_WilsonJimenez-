@@ -113,6 +113,7 @@ body::after {
 .section.active {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .nav-btn.active {
@@ -293,6 +294,7 @@ body::after {
 /* ══════════════════════════════════════════
    HOME
 ══════════════════════════════════════════ */
+
 .search-wrap {
   position: relative;
   margin-bottom: 14px;
@@ -1204,5 +1206,70 @@ body::after {
   }
   .sec-title {
     font-size: 28px;
+  }
+}
+
+/* ════════════════════════════════════════
+   DESKTOP / LARGE SCREENS
+════════════════════════════════════════ */
+
+@media (min-width: 768px) {
+  .app {
+    max-width: 900px;
+  }
+
+  .section {
+    padding-inline: 40px;
+  }
+
+  .char-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  .char-card {
+    max-width: 260px;
+    width: 100%;
+  }
+
+  .char-img-wrap {
+    aspect-ratio: 4 / 5;
+  }
+
+  .char-img-wrap img {
+    object-fit: cover;
+    object-position: top;
+  }
+  .hero-card {
+    max-width: 700px;
+    max-height: 420px;
+    margin-inline: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .hero-card img {
+    object-fit: cover;
+    object-position: top;
+  }
+  .trama-card {
+    padding: 24px;
+  }
+
+  .trama-card .stat-label {
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  .trama-card p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .sec-title {
+    font-size: 36px;
+  }
+
+  .sec-label {
+    font-size: 13px;
   }
 }

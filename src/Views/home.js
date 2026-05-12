@@ -42,23 +42,22 @@ function buildShell() {
   return `
     <div class="section section-home active">
 
-      ${buildLogo()}
+      <div class="home-static">
+        ${buildLogo()}
 
-      <p class="sec-label">Personajes</p>
-      <h1 class="sec-title">Elige Bien a Quien<br/>Preguntar</h1>
-      <div class="trama-card glass">
-      <div class="stat-label" style="margin-bottom: 8px">Trama</div>
-      <p>Rick creó una máquina capaz de alterar el tiempo… pero alguien la usó sin permiso y explotó en su garaje.
+        <p class="sec-label">Personajes</p>
+        <h1 class="sec-title">Elige Bien a Quien<br/>Preguntar</h1>
 
-Ahora múltiples líneas temporales están colapsando: hay recuerdos falsos, personas muertas que siguen vivas y realidades mezclándose.
+        <div class="trama-card glass">
+          <div class="stat-label" style="margin-bottom: 8px">Consigna</div>
+          <p>Rick creó una máquina capaz de alterar el tiempo… pero alguien la usó sin permiso y explotó en su garaje. Ahora múltiples líneas temporales están colapsando: hay recuerdos falsos, personas muertas que siguen vivas y realidades mezclándose. Habla con cada personaje, descubre las contradicciones y encuentra quién provocó el accidente antes de que el multiverso desaparezca.</p>
+        </div>
+      </div>
 
-Habla con cada personaje, descubre las contradicciones y encuentra quién provocó el accidente antes de que el multiverso desaparezca.</p>
-    </div>
-
-    
-
-      <div class="char-grid" id="char-grid">
-        ${buildSkeletons(6)}
+      <div class="home-scroll">
+        <div class="char-grid" id="char-grid">
+          ${buildSkeletons(6)}
+        </div>
       </div>
 
       <div class="cta-bar">
