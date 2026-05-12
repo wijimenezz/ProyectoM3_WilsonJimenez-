@@ -6,7 +6,7 @@
 // one place — easy to add new states later (e.g. "offline").
 // ─────────────────────────────────────────
 
-import { buildSkeletons } from "./CharCard.js";
+import { buildSkeletons } from "./charCard.js";
 
 // Swaps the grid content for a status message.
 // status: "loading" | "empty" | "error"

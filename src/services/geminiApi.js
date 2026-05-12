@@ -1,10 +1,6 @@
-// api/geminiApi.js
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY; // variable de entorno
-const MODEL = "gemini-2.5-flash-lite";
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`;
-
+// src/services/geminiApi.js
 export async function send(payload) {
-  const response = await fetch(API_URL, {
+  const response = await fetch("/api/chat", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
@@ -12,7 +8,7 @@ export async function send(payload) {
 
   if (!response.ok) {
     const err = await response.json().catch(() => ({}));
-    throw new Error(err?.error?.message ?? `Gemini error ${response.status}`);
+    throw new Error(err?.error?.message ?? `Error ${response.status}`);
   }
 
   return response.json();
