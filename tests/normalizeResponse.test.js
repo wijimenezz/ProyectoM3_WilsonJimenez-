@@ -1,6 +1,6 @@
 // src/transform/normalizeAIResponse.test.js
 import { describe, it, expect } from "vitest";
-import { normalizeAIResponse } from "./chatPayload.js";
+import { normalizeAIResponse } from "../src/transform/chatPayload.js";
 
 describe("normalizeAIResponse", () => {
   it("extrae el texto del primer candidato", () => {
