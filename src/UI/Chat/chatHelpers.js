@@ -18,8 +18,10 @@ export function fakeDelay() {
 }
 
 export function scrollToBottom() {
-  const messages = document.querySelector("#chatMessages");
-  if (messages) messages.scrollTop = messages.scrollHeight;
+  requestAnimationFrame(() => {
+    const messages = document.querySelector("#chatMessages");
+    if (messages) messages.scrollTop = messages.scrollHeight;
+  });
 }
 
 export function escapeHtml(text) {
