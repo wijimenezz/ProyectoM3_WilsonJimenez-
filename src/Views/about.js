@@ -9,6 +9,7 @@ import { renderAboutActions } from "../UI/About/aboutActions.js";
 import { renderAboutBio } from "../UI/About/aboutBio.js";
 import { renderAboutStarters } from "../UI/About/aboutStarters.js";
 import { getEpisodeStats } from "../UI/About/aboutHelpers.js";
+import { characterNotSelected } from "../UI/Chat/characterNotSelected.js";
 
 const FALLBACK_EXTRA_INFO = {
   bio: "Información no disponible.",
@@ -22,7 +23,8 @@ export function renderAbout() {
   const character = getCharacter();
 
   if (!character) {
-    app.innerHTML = `<h1>No character selected</h1>`;
+    console.log("no character, calling characterNotSelected");
+    characterNotSelected();
     return;
   }
 
