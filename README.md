@@ -1,3 +1,5 @@
+<video src="./assets/video/funcionamientoApp.mp4" controls width="100%"></video>
+
 ## URL DE REPOSITORIO EN GITHUB
 
 ```
