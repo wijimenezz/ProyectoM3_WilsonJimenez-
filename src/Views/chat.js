@@ -27,17 +27,15 @@ import {
   getLastFailedMessage,
 } from "../UI/Chat/chatForm.js"; // ← added sendMessage + getLastFailedMessage
 import { scrollToBottom } from "../UI/Chat/chatHelpers.js";
+import { characterNotSelected } from "../UI/Chat/characterNotSelected.js";
 
 export function renderChat() {
   const app = document.querySelector("#app");
   const character = getCharacter();
 
   if (!character) {
-    app.innerHTML = `
-      <div class="section section-chat active">
-        <p>No character selected.</p>
-      </div>
-    `;
+    console.log("no character, calling characterNotSelected");
+    characterNotSelected();
     return;
   }
 

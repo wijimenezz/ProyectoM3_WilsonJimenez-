@@ -2,8 +2,9 @@ import { navigateTo } from "../../navigation.js";
 
 export function characterNotSelected() {
   const app = document.querySelector("#app");
+  console.log("characterNotSelected called");
   app.innerHTML = `
-    <div class="section section-notFound active">
+    <div class="section section-chat active">
 
       <div class="nf-portal">
         <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +34,7 @@ export function characterNotSelected() {
         Con Quien Quieres<br/>Hablar Primero
       </h1>
 
-      <p style="font-size:13px;color:var(--muted);line-height:1.7;max-width:300px;margin:0 auto 28px">
+      <p style="font-size:13px;color:var(--muted);line-height:1.7;max-width:300px;margin:0 auto 28px;text-align:center">
         El multiverso está colapsando y cada personaje sabe algo diferente. Elige a uno para comenzar a interrogarlo.
       </p>
 
@@ -45,7 +46,7 @@ export function characterNotSelected() {
         </span>
       </div>
 
-      <button class="cta-btn" style="display:flex;max-width:240px" data-route="home">
+      <button class="cta-btn" id="nf-home-btn" style="display:flex;max-width:240px">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M3 12l9-9 9 9"/><path d="M9 21V12h6v9"/>
         </svg>
@@ -56,7 +57,8 @@ export function characterNotSelected() {
   `;
 
   // Wire the home button
+  app;
   app
-    .querySelector("[data-route='home']")
+    .querySelector("#nf-home-btn")
     ?.addEventListener("click", () => navigateTo("home"));
 }
