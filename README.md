@@ -1,3 +1,20 @@
+## URL DE REPOSITORIO EN GITHUB
+
+```
+https://github.com/wijimenezz/ProyectoM3_WilsonJimenez-
+
+```
+
+---
+
+## LINK DEL DEPLOY EN VERCEL
+
+```
+https://proyecto-m3-6okm42lw1-projectw.vercel.app/
+```
+
+---
+
 # ClueVerse — Interroga el Multiverso
 
 Una app de misterio interactivo inspirada en Rick and Morty. Habla con los personajes, recolecta pistas y descubre quién causó el colapso temporal antes de que el multiverso desaparezca.
